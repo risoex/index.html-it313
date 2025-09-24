@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tables and Forms for lap3</title>
+</head>
+<body>
+
+ 
+  <h3>Table lap3</h3>
+  <table border="3">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>abdullah</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>Sara</td>
+      <td>22</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  
+  <h3>Form lap3</h3>
+  <form>
+    Name: <input type="text" name="name"><br><br>
+    Email: <input type="email" name="email"><br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <hr>
+  <!-- باقي لي اخر شي يارب -->
+ 
+  <h3>Form with Table</h3>
+  <form>
+    <table border="1">
+      <tr>
+        <td>Name</td>
+        <td><input type="text" name="name"></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="email" name="email"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button type="submit">Send</button></td>
+      </tr>
+    </table>
+  </form>
+
+</body>
+</html>
