@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 4</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f5f7fb;
+      margin: 30px;
+    }
+    h2 {
+      color: #1e5aa8;
+    }
+    form, table {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 60%;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background: #1e5aa8;
+      color: white;
+    }
+    td:nth-child(odd) { background: #eef4ff; }
+    input, select {
+      margin: 5px 0;
+      width: 95%;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>1. Lists</h2>
+  <ul>
+    <li>Fruits
+      <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+      </ul>
+    </li>
+    <li>Vegetables
+      <ul>
+        <li>Carrot</li>
+        <li>Tomato</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>2. Form</h2>
+  <form>
+    Name: <input type="text"><br>
+    Email: <input type="email"><br>
+    Gender:
+    <input type="radio" name="g"> Male
+    <input type="radio" name="g"> Female<br>
+    Country:
+    <select>
+      <option>Saudi Arabia</option>
+      <option>UAE</option>
+    </select><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>3. Table</h2>
+  <table>
+    <tr>
+      <th rowspan="2">Name</th>
+      <th colspan="2">Scores</th>
+    </tr>
+    <tr>
+      <th>HTML</th>
+      <th>CSS</th>
+    </tr>
+    <tr>
+      <td>Ali</td>
+      <td>90</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <td>Abadi</td>
+      <td>95</td>
+      <td>92</td>
+    </tr>
+  </table>
+
+</body>
+</html>
