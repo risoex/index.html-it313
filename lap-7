@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meal Suggestion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .meal {
+      margin-top: 20px;
+    }
+    img {
+      width: 250px;
+      height: 180px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍽️ Meal Suggestion System</h1>
+
+  <div id="mealList"></div>
+
+  <button onclick="addMeal()">➕ Add New Meal</button>
+  <button onclick="suggestMeal()">🎲 Suggest a Meal</button>
+
+  <div class="meal" id="suggestedMeal"></div>
+
+  <script>
+    let meals = [
+      { name: "Chicken Biryani", image: "https://i.imgur.com/Y2E8L2v.jpg", calories: 650, vegetarian: false },
+      { name: "Vegetable Salad", image: "https://i.imgur.com/Vz1U6Rk.jpg", calories: 200, vegetarian: true },
+      { name: "Cheese Burger", image: "https://i.imgur.com/xWQ4vPn.jpg", calories: 750, vegetarian: false },
+      { name: "Pasta Alfredo", image: "https://i.imgur.com/d4Thb9p.jpg", calories: 500, vegetarian: true }
+    ];
+
+    function showMeals() {
+      let listDiv = document.getElementById("mealList");
+      listDiv.innerHTML = "<h2>Available Meals:</h2>";
+      meals.forEach(meal => {
+        listDiv.innerHTML += `
+          <p><strong>${meal.name}</strong> - ${meal.calories} cal - 
+          ${meal.vegetarian ? "🥦 Vegetarian" : "🍗 Non-Vegetarian"}</p>`;
+      });
+    }
+
+    function addMeal() {
+      let name = prompt("Enter meal name:");
+      let image = prompt("Enter image URL:");
+      let calories = prompt("Enter calories:");
+      let vegetarian = confirm("Is it vegetarian?");
+      if (name && image && calories) {
+        meals.push({ name, image, calories: Number(calories), vegetarian });
+        alert("Meal added successfully!");
+        showMeals();
+      } else {
+        alert("❌ Please fill all fields!");
+      }
+    }
+
+    function suggestMeal() {
+      let randomIndex = Math.floor(Math.random() * meals.length);
+      let meal = meals[randomIndex];
+      document.getElementById("suggestedMeal").innerHTML = `
+        <h2>🍴 Suggested Meal:</h2>
+        <h3>${meal.name}</h3>
+        <img src="${meal.image}" alt="${meal.name}">
+        <p>${meal.calories} calories - ${meal.vegetarian ? "🥦 Vegetarian" : "🍗 Non-Vegetarian"}</p>
+      `;
+    }
+
+    showMeals();
+  </script>
+
+</body>
+</html>
