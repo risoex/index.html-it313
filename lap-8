@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 8 - AJAX Test</title>
+    <style>
+        #content {
+            padding: 15px;
+            background: #f2f2f2;
+            border: 1px solid #ccc;
+            width: 300px;
+            min-height: 80px;
+            margin-bottom: 20px;
+        }
+        #time {
+            font-weight: bold;
+            color: #721817;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Lab 8 – AJAX Dynamic Content</h2>
+
+<div id="content">Click the button to load content.</div>
+
+<button onclick="loadText()">Load Text File</button>
+
+<br><br>
+
+<div>Current time: <span id="time"></span></div>
+
+<script>
+// AJAX load
+function loadText() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "data.txt", true);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            document.getElementById("content").innerText = xhr.responseText;
+        }
+    };
+    xhr.send();
+}
+
+// Live time updater
+setInterval(() => {
+    document.getElementById("time").innerText = new Date().toLocaleTimeString();
+}, 1000);
+</script>
+
+</body>
+</html>
